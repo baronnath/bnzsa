@@ -20,9 +20,9 @@ class FeedController extends AbstractController
 
     /**
      * Game update listener
-     * @Route("/feed", name="feed")
+     * @Route("/listener", name="listener")
      */
-    public function feed(Request $request)
+    public function listener(Request $request)
     {
 	    $this->em = $this->getDoctrine()->getManager();
 
@@ -40,6 +40,8 @@ class FeedController extends AbstractController
 
 	    	$this->em->flush();
 	    }
+
+	    echo 'Success!';
     }
 
     /**
@@ -125,48 +127,3 @@ class FeedController extends AbstractController
     	return;
     }
 }
-
-
-	/*
-	// JSON REQUEST
-	$request = {
-		'type': 'list',
-		'matches': [
-			{
-				'matchId': ,
-				'place': ,
-    			'datetime': ,
-    			'teamId': ,
-    			'results': [2, 0],
-    			'ended': false
-    		}
-    	]
-	}
-
-	$request = {
-		'type': 'report'
-		'matches': [
-			{
-				'matchId': ,
-				'place': ,
-    			'datetime': ,
-    			'teamId': ,
-    			'results': [2, 0],
-    			'ended': false,
-    			'players': [ , , ],
-    			'events': {
-    				{
-						'playerId': ,
-						'type': ,
-    					'datetime': 
-					},
-					{
-						'playerId': ,
-						'type': ,
-    					'datetime': 
-					}
-				}
-    		}
-    	]
-	}
-	*/
